@@ -56,8 +56,7 @@ namespace DemMatchesManDemMatches.Models
                 return result;
             }
             catch (Exception) { }
-            return getMatches;
-            
+            return getMatches;   
         }
 
         // kauhea spesifinen hirviöratkaisu joka pitäisi korjata paremmalla ajalla. Json.net rikkoo dictin sisäiset
@@ -72,7 +71,7 @@ namespace DemMatchesManDemMatches.Models
             return a;
         }
 
-        //luodaan ottelulista parsimalla json-tiedostosta yksittäiset ottelutiedot ja lisätään ne listaan. pari apumuuttujaa 
+        //luodaan ottelulista käymällä läpi  yksittäiset ottelutiedot parametri-dictistä ja lisätään ne listaan.
         public void addMatches(List<Dictionary<String, dynamic>> matsit)
         {   
             foreach (var m in matsit)
@@ -98,7 +97,7 @@ namespace DemMatchesManDemMatches.Models
             getMatches = matches;
         }
     }
-        // eli luokka yksittäistä ottelua varten, omaa tarvittavat kentät.
+        // eli luokka yksittäistä ottelua varten, omaa tarvittavat kentät ja vähän ylimääräisiä.
         public class Match
         {
             public int Id { get; set; }

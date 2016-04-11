@@ -15,14 +15,14 @@ namespace DemMatchesManDemMatches.Models
     {      
         MatchModels m = new MatchModels();
         // GET: Match
-        //haetaan json, heitetää se malleille jossa luodaan itse luokka ja palautetaan lista luokista, passataan viewssiin.
+        //kutsutaan bootstrappia ja passataan viewssiin bootstrapin tuloksena muuttunut arvo modelsseissa.
         public ActionResult Index()
         {
             bootStrap();
             return View(m.getMatches);
         }
 
-        //postmetodi, samanlainen kuin ylempi mutta palauttaa etsityt ottelut.
+        //postmetodi, samanlainen kuin ylempi mutta palauttaa etsityt ottelut kaikkien sijasta.
         [HttpPost]
         public  ActionResult Index(string first, string second)
         {
