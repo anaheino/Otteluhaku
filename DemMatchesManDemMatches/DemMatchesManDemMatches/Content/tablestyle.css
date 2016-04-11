@@ -1,0 +1,27 @@
+﻿/*
+    varsinaisen tablen muotoilua hoitava luokka, tein tämän pikaisesti käsin.
+*/
+table { 
+        margin-left:auto;
+        margin-right:auto;
+        width: 75%; 
+		border-collapse: collapse; 
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+
+	tr:nth-of-type(odd) { 
+		background: #7590C2; 
+	}
+    	tr:nth-of-type(even) { 
+		background: #eee; 
+	}
+	th { 
+		background: #333; 
+		color: white; 
+		font-weight: bold; 
+	}
+	td, th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align: center; 
+	}

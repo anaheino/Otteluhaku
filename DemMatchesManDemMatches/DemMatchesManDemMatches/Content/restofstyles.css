@@ -1,0 +1,64 @@
+﻿/*
+    Osittain netistä kopioitu ja osittain itsetehty css lopuille html elementeille. 
+*/
+h1 {
+    text-align:center; color: #c9d0d4; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 50px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555; 
+
+}
+
+p { padding-top:20px;
+    padding-bottom:20px;
+    color: #bbc3c8; font-family: 'Verdana', sans-serif; font-size: 16px; text-align:center;  text-indent: 30px; margin: 0; }
+label{
+    color: #bbc3c8;
+    padding-left:10px;
+    padding-right:10px;
+}
+form{
+    display:block;
+    margin:auto;
+    text-align:center;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+    
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+body{
+    background-color:#1C2329;
+}
+/* tehdään vinkeä hakunappula */
+input[type=submit] {
+	border : solid 1px #fff700;
+	border-radius : 6px;
+	font-size : 13px;
+	color : #ffffff;
+	padding : 1px 17px;
+	background : #ffd500;
+	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd500), color-stop(100%,#ff8c00));
+	background : -moz-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -webkit-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -o-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd500', endColorstr='#ff8c00',GradientType=0 );
+
+
+}

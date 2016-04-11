@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+@model List<DemMatchesManDemMatches.Models.Match>
+<!--- alkuun haetaan css tiedostot content-kansiosta.-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ottelutulokset</title>
+    @Styles.Render("~/Content/tablestyle.css")
+    @Styles.Render("~/Content/restofstyles.css")
+    
+</head>
+<body>
+    <h1>Ottelutulokset</h1>
+
+    <!--- hakulomake otteluhakua varten -->
+    <form id="pvm" method="post">
+        <input type="text" id="f" name="first" />
+        <label for="s">-</label>
+            <input type="text" id="s" name="second" />
+            <input type="submit" value="Hae" />
+</form>
+    <p>Tässä voit hakea otteluita päivämäärän perusteella, syötä arvot muodossa pp.kk.vvvv</p>
+    <!--- table jossa on varsinaiset otteludatat. -->
+        <table id="tulokset">
+            <tr>
+                <td>
+                    <b>@Html.Raw("Pvm ja Aika")</b>
+                </td>
+                <td>
+                    <b>@Html.Raw("Joukkueet")</b>
+                </td>
+                <td>
+                    <b>@Html.Raw("Tulokset")</b>
+                </td>
+            </tr>
+            <!--- silmukka jolla täydennetään ottelut näkyviin. -->
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.Raw(item.MatchDate.ToString())
+                    </td>
+                    <td>
+                        <!--- katsotaan kumpi voitti ja boldataan nimi sen perusteella. -->
+                        @if (item.AwayGoals < item.HomeGoals)
+                        {
+                            <b>@Html.Raw(item.HomeTeam.ToString())</b>
+                            @Html.Raw(" - " + item.AwayTeam.ToString())
+                        }
+                        else if (item.HomeGoals < item.AwayGoals)
+                        {
+                            
+                                @Html.Raw(item.HomeTeam.ToString() + " - " )
+                            <b> @Html.Raw(item.AwayTeam.ToString())</b>
+
+                        }
+                        else
+                        {
+                            @Html.Raw(item.HomeTeam.ToString()+ " - " + item.AwayTeam.ToString())
+                        }
+
+                    </td>
+                    <td>
+                        <!--- boldataan ottelun voittajan pistetulos. -->
+                        @if (item.HomeGoals > item.AwayGoals)
+                        {
+                            <b>@Html.Raw(item.HomeGoals.ToString())</b>
+                            @Html.Raw(" - " + item.AwayGoals.ToString())
+                        }
+                        else if(item.HomeGoals < item.AwayGoals)
+                        {
+                             @Html.Raw(item.HomeGoals.ToString() + " - ")
+                             <b>@Html.Raw(item.AwayGoals.ToString())</b>
+                        }
+                        else
+                        {
+                            @Html.Raw(item.HomeGoals.ToString() + " - " + item.AwayGoals.ToString())
+                        }
+
+                    </td>
+                </tr>
+            }
+        </table>
+</body>
+</html>
