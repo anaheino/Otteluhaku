@@ -45,19 +45,19 @@
                         <!--- katsotaan kumpi voitti ja boldataan nimi sen perusteella. -->
                         @if (item.AwayGoals < item.HomeGoals)
                         {
-                            <b>@Html.Raw(item.HomeTeam.ToString())</b>
-                            @Html.Raw(" - " + item.AwayTeam.ToString())
+                            <b>@Html.Raw(item.HomeTeam)</b>
+                            @Html.Raw(" - " + item.AwayTeam)
                         }
                         else if (item.HomeGoals < item.AwayGoals)
                         {
                             
-                                @Html.Raw(item.HomeTeam.ToString() + " - " )
-                            <b> @Html.Raw(item.AwayTeam.ToString())</b>
+                                @Html.Raw(item.HomeTeam + " - " )
+                            <b> @Html.Raw(item.AwayTeam)</b>
 
                         }
                         else
                         {
-                            @Html.Raw(item.HomeTeam.ToString()+ " - " + item.AwayTeam.ToString())
+                            @Html.Raw(item.HomeTeam + " - " + item.AwayTeam)
                         }
 
                     </td>
