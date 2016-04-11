@@ -1,0 +1,2 @@
+# Otteluhaku
+Pikaisesti rakennettu ottelutietopalvelu.
