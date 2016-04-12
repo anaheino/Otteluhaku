@@ -31,7 +31,7 @@ namespace DemMatchesManDemMatches.Models
         }
 
         //perus esilatausfunktio. Lukee datan, tekee siitä dictin ja luo itse luokan kutsumalla addMatches funktiota modelsissa.
-        public void bootStrap()
+        private void bootStrap()
         {
             string path = Server.MapPath("~/Resources/matches.json");
             StreamReader r = new StreamReader(path);
