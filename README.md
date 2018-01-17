@@ -1,2 +1,2 @@
 # Otteluhaku
-Pikaisesti rakennettu ottelutietopalvelu.
+Pikaisesti rakennettu ottelutietopalvelu, asp.net mvc
